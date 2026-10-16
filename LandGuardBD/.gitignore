@@ -1,0 +1,11 @@
+# Python
+backend/.venv/
+backend/__pycache__/
+backend/**/__pycache__/
+backend/.env
+backend/landguard.db
+backend/private_uploads/
+# Frontend
+frontend/node_modules/
+frontend/dist/
+frontend/.env.local

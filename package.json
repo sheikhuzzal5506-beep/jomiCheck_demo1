@@ -1,0 +1,14 @@
+{
+  "name": "landguard-bd-mvp",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "LandGuardBD/frontend"
+  ],
+  "scripts": {
+    "dev": "npm --workspace landguard-bd-frontend run dev",
+    "start": "npm run dev",
+    "build": "npm --workspace landguard-bd-frontend run build",
+    "preview": "npm --workspace landguard-bd-frontend run preview"
+  }
+}
