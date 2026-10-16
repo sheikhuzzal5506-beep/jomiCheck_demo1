@@ -2,11 +2,11 @@
 
 ## Deploy from this project
 
-Connect the repository or project folder at `E:\Land tech\LandGuardBD_MVP` to Netlify. The root `netlify.toml` already configures:
+Connect the repository or project folder at `E:\Land tech\LandGuardBD_MVP` to Netlify. In Netlify site settings, leave **Base directory** blank. The root `netlify.toml` already configures:
 
-- Base directory: `LandGuardBD/frontend`
+- Repository root as the build directory
 - Build command: `npm run build`
-- Publish directory: `dist`
+- Publish directory: `LandGuardBD/frontend/dist`
 - SPA routing fallback to `index.html`
 
 ## Drag and drop
