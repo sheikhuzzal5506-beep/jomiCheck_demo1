@@ -20,7 +20,7 @@ from .security import hash_password, verify_password, create_token, decode_token
 from .seed import seed
 
 app = FastAPI(title="JomiCheck BD API", version="0.1.0", description="Synthetic-data land deed verification prototype. Not an official government service.")
-app.add_middleware(CORSMiddleware, allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"], allow_origin_regex=r"^https?://(localhost|127\.0\.0\.1|0\.0\.0\.0|192\.168\.\d+\.\d+|10\.\d+\.\d+\.\d+)(:\d+)?$", allow_credentials=True, allow_methods=["*"], allow_headers=["*"])
+app.add_middleware(CORSMiddleware, allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"], allow_origin_regex=r"^https?://(localhost|127\.0\.0\.1|0\.0\.0\.0|192\.168\.\d+\.\d+|10\.\d+\.\d+\.\d+|[a-z0-9-]+\.netlify\.app)(:\d+)?$", allow_credentials=True, allow_methods=["*"], allow_headers=["*"])
 UPLOAD_DIR = Path(os.getenv("UPLOAD_DIR", "./private_uploads")); UPLOAD_DIR.mkdir(parents=True, exist_ok=True)
 MAX_UPLOAD = int(os.getenv("MAX_UPLOAD_MB", "10")) * 1024 * 1024
 ALLOWED = {"image/jpeg", "image/png", "application/pdf"}

@@ -6,9 +6,9 @@
     "LandGuardBD/frontend"
   ],
   "scripts": {
-    "dev": "npm --workspace landguard-bd-frontend run dev",
+    "dev": "npm --workspace LandGuardBD/frontend run dev",
     "start": "npm run dev",
-    "build": "npm --workspace landguard-bd-frontend run build",
-    "preview": "npm --workspace landguard-bd-frontend run preview"
+    "build": "npm --workspace LandGuardBD/frontend run build",
+    "preview": "npm --workspace LandGuardBD/frontend run preview"
   }
 }
