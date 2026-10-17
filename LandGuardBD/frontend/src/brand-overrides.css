@@ -424,6 +424,56 @@
   .gift-lily-seal .brand-mark { width: 245px; height: 245px; }
 }
 
+/* Final deployment layout correction: keep the coin mark clear of the headline,
+   and make the signed-in account action visible on every viewport. */
+.gift-login-page { min-height: 100dvh; }
+.gift-window { min-height: calc(100dvh - 29px); }
+.gift-auth-card { max-height: calc(100dvh - 40px); overflow-y: auto; }
+.gift-lily-seal { z-index: 2; }
+.gift-hero-copy { z-index: 5; }
+
+.sidebar .user-row .icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-width: max-content;
+  padding: 7px 9px;
+  border: 1px solid #dbe8d3;
+  border-radius: 7px;
+  color: #315d3c;
+  background: #f7fbf4;
+}
+.sidebar .user-row .icon-btn::after {
+  content: 'Sign out';
+  font-size: 9px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.sidebar .user-row .icon-btn:hover {
+  color: #173b28;
+  border-color: #b9cfb0;
+  background: #edf6e9;
+}
+
+@media (min-width: 981px) {
+  .main-area { padding-top: 72px; }
+  .page-wrap { padding-top: 42px; }
+  .gift-hero { min-height: calc(100dvh - 78px); }
+  .gift-hero-copy { margin-top: 38px; }
+  .gift-lily-seal { top: 232px; width: 292px; height: 292px; }
+  .gift-lily-seal .brand-mark { width: 292px; height: 292px; }
+  .gift-hero p { margin-top: 286px; }
+}
+
+@media (max-width: 640px) {
+  .gift-window { min-height: 100dvh; }
+  .gift-auth-card { width: min(100%, 390px); padding: 27px 22px 24px; }
+  .sidebar .user-row .icon-btn::after { content: 'Logout'; }
+  .gift-lily-seal { top: 213px; }
+  .gift-hero p { margin-top: 258px; }
+}
+
 /* Final type and sizing pass requested for the full frontend. */
 html,
 body,
@@ -678,4 +728,51 @@ tbody tr:hover { background: #f8fbf6; }
   .sidebar .nav-link { padding: 0 6px; font-size: 9px; }
   .page-wrap { padding-left: 4vw; padding-right: 4vw; }
   .banner-art { right: 2%; width: 300px; }
+}
+
+/* Last override: these rules intentionally come after every responsive pass. */
+.gift-window { overflow-x: hidden; overflow-y: auto; }
+.sidebar .user-row .icon-btn {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  min-width: 78px;
+  padding: 7px 10px !important;
+  border: 1px solid #b9cfb0;
+  border-radius: 7px;
+  color: #173b28;
+  background: #edf6e9;
+}
+.sidebar .user-row .icon-btn::after {
+  content: 'Sign out';
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+.sidebar .user-row .icon-btn:hover { background: #e2f0dc; }
+
+/* Keep the authenticated sign-out control clear of the fixed topbar actions. */
+@media (min-width: 981px) {
+  .sidebar-bottom { margin-right: 135px; }
+  .sidebar .user-row .icon-btn { min-width: 78px; }
+}
+
+@media (min-width: 981px) {
+  .page-wrap { padding-top: 42px !important; }
+  .gift-hero { display: flex; flex-direction: column; align-items: center; justify-content: flex-start; }
+  .gift-hero-copy { width: min(100%, 760px); margin-top: 38px; }
+  .gift-lily-seal { top: 232px; width: 292px; height: 292px; }
+  .gift-lily-seal .brand-mark { width: 292px; height: 292px; }
+  .gift-hero p { margin-top: 286px; }
+}
+
+@media (max-width: 640px) {
+  .sidebar .user-row .icon-btn { min-width: 72px; }
+  .sidebar .user-row .icon-btn::after { content: 'Logout'; }
+  .gift-hero { display: flex; flex-direction: column; align-items: center; justify-content: flex-start; }
+  .gift-hero-copy { margin-top: 47px; }
+  .gift-lily-seal { top: 213px; }
+  .gift-hero p { margin-top: 258px; }
 }
